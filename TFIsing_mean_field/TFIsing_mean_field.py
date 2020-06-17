@@ -94,10 +94,10 @@ def make_ham(S0,Sx,Sy,Sz,twoS,J,Gamma,Hz,ThDot):
 
 def calc_physquant(S0,Sx,Sy,Sz,invS,Ham,psi):
     norm2 = np.linalg.norm(psi)
-    valSx = (psi.conj().T).dot(Sx.dot(psi)).real*invS
-    valSy = (psi.conj().T).dot(Sy.dot(psi)).real*invS
-    valSz = (psi.conj().T).dot(Sz.dot(psi)).real*invS
-    valHam = (psi.conj().T).dot(Ham.dot(psi)).real
+    valSx = (psi.conj().T).dot(Sx.dot(psi)).real*invS/norm2
+    valSy = (psi.conj().T).dot(Sy.dot(psi)).real*invS/norm2
+    valSz = (psi.conj().T).dot(Sz.dot(psi)).real*invS/norm2
+    valHam = (psi.conj().T).dot(Ham.dot(psi)).real/norm2
 #    print("norm^2",norm2)
 #    print("valSx",valSx)
 #    print("valSy",valSy)

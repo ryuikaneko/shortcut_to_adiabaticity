@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 
 def parse_args():
     parser = argparse.ArgumentParser(description='shortcut to adiabaticity TFI mean field')
-    parser.add_argument('-twoS',metavar='twoS',dest='twoS',type=np.int,default=2,help='set 2S')
+    parser.add_argument('-twoS',metavar='twoS',dest='twoS',type=np.int,default=1000,help='set 2S')
     parser.add_argument('-tau',metavar='tau',dest='tau',type=np.float64,default=1.0,help='set tau (total time)')
     return parser.parse_args()
 

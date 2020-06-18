@@ -20,9 +20,9 @@ Jzz [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
 Jx [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
 Jy [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
 Jz [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
-time: prepare spin and interaction 1.1977052688598633
+time: prepare spin and interaction 1.1815896034240723
 energy_MF(t=0) -2.5000002499999843 1.5000002499999845
 energy_ED(t=0) -24.37649357599094 -21.376491638139697
-time: prepare intial state 0.07194399833679199
-time: calculate dynamics 8.472710371017456
-time: plot 0.5616099834442139
+time: prepare intial state 0.07325243949890137
+time: calculate dynamics 8.282877922058105
+time: plot 0.5553133487701416

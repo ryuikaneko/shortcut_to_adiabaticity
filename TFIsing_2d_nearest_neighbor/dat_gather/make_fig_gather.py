@@ -56,8 +56,8 @@ for file_name in all_files:
 #print(list_time)
 #print(list_ED_valSz)
 
-#numN=len(list_N)
-numN=len(list_N)-1
+numN=len(list_N)
+#numN=len(list_N)-1
 
 f = open("dat_MF_valSx","w")
 for j in range(len(list_time[0])):

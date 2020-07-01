@@ -184,7 +184,8 @@ def main():
     print("Nsteps=",Nsteps)
     print("time_i=",time_i)
     print("time_f=",time_f)
-    print("list_time: t=",list_time)
+#    print("list_time: t=",list_time)
+    print("list_time",list_time)
 #    print("list_time_for_U: t+dt/2=",list_time_for_U)
     print("J",J)
     print("Hz",Hz)
@@ -301,6 +302,21 @@ def main():
         list_ED_valHam.append(valHam)
     end = time.time()
     print("time: calculate dynamics",end - start)
+
+## print results
+    start = time.time()
+    print("list_MF_norm2",list_MF_norm2)
+    print("list_MF_valSx",list_MF_valSx)
+    print("list_MF_valSy",list_MF_valSy)
+    print("list_MF_valSz",list_MF_valSz)
+    print("list_MF_valHam",list_MF_valHam)
+    print("list_ED_norm2",list_ED_norm2)
+    print("list_ED_valSx",list_ED_valSx)
+    print("list_ED_valSy",list_ED_valSy)
+    print("list_ED_valSz",list_ED_valSz)
+    print("list_ED_valHam",list_ED_valHam)
+    end = time.time()
+    print("time: print",end - start)
 
 ## plot evolution
     start = time.time()

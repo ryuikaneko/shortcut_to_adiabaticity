@@ -109,17 +109,17 @@ def calc_physquant(Sx,Sy,Sz,invS,Ham,psi):
 #----
 
 def make_list_1(N):
-    list_Jz = np.ones(N,dtype=np.float64)
+    list_Jz = np.ones(N,dtype=np.complex128)
     return list_Jz
 
 def make_list_2(N):
     list_site1 = [i for i in range(N)]
     list_site2 = [(i+1)%N for i in range(N)]
-    list_Jzz = np.ones(N,dtype=np.float64)
+    list_Jzz = np.ones(N,dtype=np.complex128)
     return list_site1, list_site2, list_Jzz
 
 def make_ham_1(S0,Sz,N,list_Jz):
-    Ham = scipy.sparse.csr_matrix((2**N,2**N),dtype=np.float64)
+    Ham = scipy.sparse.csr_matrix((2**N,2**N),dtype=np.complex128)
     for site1 in range(N):
         ISz = 1
         Jz = list_Jz[site1]
@@ -132,7 +132,7 @@ def make_ham_1(S0,Sz,N,list_Jz):
     return Ham
 
 def make_ham_2(S0,Sz,N,Nbond,list_site1,list_site2,list_Jzz):
-    Ham = scipy.sparse.csr_matrix((2**N,2**N),dtype=np.float64)
+    Ham = scipy.sparse.csr_matrix((2**N,2**N),dtype=np.complex128)
     for bond in range(Nbond):
         i1 = list_site1[bond]
         i2 = list_site2[bond]
@@ -233,10 +233,16 @@ def main():
         ene_MF,vec_MF = scipy.linalg.eigh(Ham_MF.todense())
     else:
         ene_MF,vec_MF = scipy.sparse.linalg.eigsh(Ham_MF,which='SA',k=2)
+    idx = ene_MF.argsort()
+    ene_MF = ene_MF[idx]
+    vec_MF = vec_MF[:,idx]
     if 2**N<10:
         ene_ED,vec_ED = scipy.linalg.eigh(Ham_ED.todense())
     else:
         ene_ED,vec_ED = scipy.sparse.linalg.eigsh(Ham_ED,which='SA',k=2)
+    idx = ene_ED.argsort()
+    ene_ED = ene_ED[idx]
+    vec_ED = vec_ED[:,idx]
     print("energy_MF(t=0)",ene_MF[0],ene_MF[1])
     print("energy_ED(t=0)",ene_ED[0],ene_ED[1])
 #    print("vector_MF(t=0)",vec_MF[:,0],vec_MF[:,1])
